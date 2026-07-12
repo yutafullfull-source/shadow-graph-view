@@ -1,0 +1,10 @@
+{
+  "id": "shadow-graph-view",
+  "name": "Shadow Graph View",
+  "version": "0.0.1",
+  "minAppVersion": "1.5.0",
+  "description": "3D graph view with media thumbnails for shadow work research.",
+  "author": "Yuta",
+  "authorUrl": "",
+  "isDesktopOnly": false
+}
