@@ -1,0 +1,332 @@
+.shadow-graph-container {
+  padding: 16px;
+}
+
+.shadow-graph-header h1 {
+  margin-bottom: 4px;
+}
+
+.shadow-graph-header p {
+  margin-top: 0;
+  color: var(--text-muted);
+}
+
+/* 来場者インターフェース */
+
+.shadow-interview-panel {
+  position: relative;
+  margin: 20px 0;
+  padding: 38px 28px;
+  overflow: hidden;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 18px;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(92, 150, 255, 0.18),
+      transparent 55%
+    ),
+    var(--background-secondary);
+  text-align: center;
+}
+
+.shadow-interview-eyebrow {
+  margin-bottom: 12px;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.shadow-interview-question {
+  margin: 0 auto 14px;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.shadow-interview-description {
+  max-width: 680px;
+  margin: 0 auto 20px;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.shadow-interview-status {
+  min-height: 24px;
+  margin: 14px 0;
+  font-weight: 600;
+}
+
+.shadow-recording-timer {
+  margin: 12px 0;
+  font-family: var(--font-monospace);
+  font-size: 30px;
+  font-variant-numeric: tabular-nums;
+}
+
+.shadow-record-button {
+  min-width: 230px;
+  min-height: 54px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.shadow-interview-panel.is-recording {
+  border-color: rgba(255, 80, 80, 0.75);
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 70, 70, 0.22),
+      transparent 55%
+    ),
+    var(--background-secondary);
+}
+
+.shadow-interview-panel.is-recording
+  .shadow-record-button {
+  animation: shadow-record-pulse 1.4s infinite;
+}
+
+.shadow-interview-panel.is-analyzing
+  .shadow-record-button {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+@keyframes shadow-record-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 80, 80, 0.25);
+  }
+
+  50% {
+    box-shadow: 0 0 0 12px rgba(255, 80, 80, 0);
+  }
+}
+
+.shadow-interview-result {
+  max-width: 720px;
+  margin: 28px auto 0;
+  padding: 20px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  background: var(--background-primary);
+  text-align: left;
+}
+
+.shadow-result-label {
+  margin-bottom: 7px;
+  color: var(--interactive-accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.shadow-interview-result h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+
+.shadow-result-summary {
+  line-height: 1.8;
+}
+
+.shadow-result-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 14px 0;
+}
+
+.shadow-result-keywords span {
+  padding: 5px 10px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 999px;
+  background: var(--background-secondary);
+  font-size: 12px;
+}
+
+/* ノード詳細 */
+
+.shadow-graph-detail {
+  margin: 12px 0;
+  padding: 12px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: var(--background-secondary);
+}
+
+.shadow-graph-detail h2 {
+  margin-top: 0;
+}
+
+.shadow-graph-detail pre {
+  margin-top: 12px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* 物理設定 */
+
+.shadow-force-panel {
+  margin: 14px 0;
+  padding: 14px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  background: var(--background-secondary);
+}
+
+.shadow-force-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.shadow-force-panel-header h3 {
+  margin: 0;
+}
+
+.shadow-force-panel-header button {
+  padding: 5px 12px;
+  border-radius: 8px;
+}
+
+.shadow-force-controls {
+  display: grid;
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(220px, 1fr)
+    );
+  gap: 12px 18px;
+}
+
+.shadow-force-row {
+  min-width: 0;
+}
+
+.shadow-force-row-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.shadow-force-value {
+  min-width: 58px;
+  color: var(--text-muted);
+  text-align: right;
+  font-family: var(--font-monospace);
+}
+
+.shadow-force-slider {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* 3Dグラフ */
+
+.shadow-graph-3d-area {
+  position: relative;
+  width: 100%;
+  height: 650px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1e1e1e;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.shadow-graph-3d-area:active {
+  cursor: grabbing;
+}
+
+.shadow-graph-3d-area.is-hovering-node {
+  cursor: pointer;
+}
+
+.shadow-graph-3d-area canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  touch-action: none;
+  user-select: none;
+}
+
+/* 設定画面 */
+
+.shadow-api-key-input {
+  min-width: 280px;
+}
+
+.shadow-model-status {
+  margin: 8px 0 14px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--interactive-accent);
+  border-radius: 4px;
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+.shadow-model-selector-container {
+  margin-bottom: 14px;
+}
+
+.shadow-model-selector-container select {
+  min-width: 320px;
+  max-width: 520px;
+}
+.shadow-transcript-section {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.shadow-transcript-toggle {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--background-secondary);
+  text-align: left;
+  font-weight: 600;
+}
+
+.shadow-transcript-content {
+  margin-top: 10px;
+  padding: 14px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: var(--background-secondary);
+}
+
+.shadow-transcript-content h4 {
+  margin: 0 0 10px;
+}
+
+.shadow-transcript-content p {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.8;
+}
+
+.shadow-result-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
